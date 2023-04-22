@@ -1,0 +1,152 @@
+/* hello google font :) */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/* * selects all elements on a page */
+/* width 100% makes the content 100% then padding and border */
+/* with box sizing, instead of making the content 100, it makes the total 100 */
+* {
+    box-sizing: border-box;
+}
+
+/* tells the images that the biggest size it can be is the size of the box it is in */
+img {
+    max-width: 100%;
+}
+figure {
+    text-align: center;
+}
+
+h1, h2, h3, h4 ,h5, h6, .post-date, nav {
+    font-family: 'Lora', Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+} 
+p {
+    font-size: .9em;
+}
+
+header {
+    text-align: center;
+    margin-top: 1.2em;
+}
+
+nav {
+    text-transform: uppercase;
+}
+
+/* default height for box elements is auto and default width is 100% */
+/* percentage unit is always percent of the parent */
+/* heights are often not as big as we think they are */
+/* 16px is the default font-size: 1.2 em is 20% larger than the default */
+/* em is relative; can get around this by using rems (root em) */
+html {
+    height: 100%;
+    font-size: 1.2em;
+}
+
+
+header > h1 > a:link,
+header > h1 > a:visited,
+header > h1 > a:hover,
+header > h1 > a:active {
+    color: #333;
+}
+header li {
+    list-style: none;
+}
+
+body {
+    background-color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+article {
+    display: grid;
+    padding: 1.2em;
+
+    /* display: flex;
+    flex-flow: row nowrap; */
+}
+
+img {
+    max-width: 10em;
+}
+
+/* global link styles */
+
+a {
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    flex-flow: column;
+    padding-left: 0;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    margin: 1.2em;
+}
+nav ul li {
+    padding: .6em;
+}
+
+/* order matters: link,visited,active,hover */
+a:link,
+a:visited {
+    color: #666;
+}
+a:hover {
+    color: #00ddff;
+}
+a:active {
+    color: #DEB887;
+}
+
+.post-date {
+    font-size: 1.2em;
+    text-align: right;
+    padding: .6em;
+}
+
+.post-content {
+    background-color: white;
+    border-top: 1px solid #d0d0d0;
+    /* padding: 1.2em; */
+
+    /* margin: 1.2em; */
+}
+
+/* when the screen gets bigger than 700px then do this */
+/* media queries have to come after default styles, or things will break */
+@media screen and (min-width: 700px) {
+    nav ul {
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+    }
+    article {
+        grid-template-columns: 1fr 2fr;
+        padding: 0;
+    }
+    .post-content {
+        border-top: none;
+        border-left: 1px solid #d0d0d0;
+        border-bottom: 1px solid #d0d0d0;
+        padding: 1.2em;
+    }
+    .post-date {
+        padding-top: 1.2em;
+    }
+}
+
+/* priority cascade */
+/* external (link) -- low precedence: applied first */
+/* internal (style tag) -- */
+/* inline styles (there is a time and place) -- highest precedence: applied last */
+
+/* calc, clamp */
+/* vertical -- justify */
+/* horizontal -- align */
